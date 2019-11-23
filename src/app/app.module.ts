@@ -19,8 +19,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     NavbarComponent,
     CvComponent,
     ChatComponent,
-    ContactComponent,
-    NbCardFooterComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,

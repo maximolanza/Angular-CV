@@ -1,0 +1,25 @@
+<nb-layout>
+   
+   <nb-layout-header subheader fixed>
+        <nb-user 
+        name="Maximo Lanza" 
+        title="Developer"
+        picture="https://i.imgur.com/fi0KwgG.png"
+        ></nb-user>   
+ </nb-layout-header>
+
+    <nb-sidebar >
+        
+       <!--
+              <button nbButton fullWidth status="primary">Curriculum</button>
+              <button nbButton fullWidth status="success">CV</button>
+              <button nbButton fullWidth status="danger">Danger</button>
+              
+-->
+<nb-menu [items]="items"></nb-menu>
+    </nb-sidebar>
+
+    <nb-layout-column>
+        <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>

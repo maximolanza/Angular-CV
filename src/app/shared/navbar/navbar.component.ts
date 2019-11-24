@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
-
+import { NbSidebarService } from '@nebular/theme';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,7 +8,7 @@ import { NbMenuItem } from '@nebular/theme';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  collapsed : boolean;
   items = [
     {
       title: 'Inicio',
@@ -32,8 +32,21 @@ export class NavbarComponent implements OnInit {
     },
   ];
   
-  constructor() { }
+  constructor(private sidebarService: NbSidebarService) {
+    this.collapsed= false;
+  }
 
+  toggle() {
+    this.sidebarService.toggle(true);
+    if (this.collapsed){
+      this.collapsed=false;
+    }else{
+      this.collapsed=true;
+    }
+ 
+    
+    return false;
+  }
   ngOnInit() {
 
 

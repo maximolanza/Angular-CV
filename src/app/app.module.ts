@@ -12,6 +12,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { ChatService } from './pages/chat/chat.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ContactComponent } from './pages/contact/contact.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     NavbarComponent,
     CvComponent,
     ChatComponent,
-    ContactComponent
+    ContactComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

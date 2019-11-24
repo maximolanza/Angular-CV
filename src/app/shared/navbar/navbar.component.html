@@ -1,15 +1,27 @@
 <nb-layout>
    
-   <nb-layout-header subheader fixed>
-        <nb-user 
-        name="Maximo Lanza" 
-        title="Developer"
-        picture="https://i.imgur.com/fi0KwgG.png"
-        ></nb-user>   
+   <nb-layout-header fixed>
+       
+
+        <a href="#" (click)="toggle()"><i class="nb-menu"></i><nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a>
  </nb-layout-header>
 
-    <nb-sidebar >
-        
+    <nb-sidebar  state={{state}}>
+            <nb-user *ngIf="collapsed"
+        title=''
+        name=''
+        onlyPicture='true'
+        picture="https://i.imgur.com/fi0KwgG.png"
+        size="small"
+        ></nb-user>  
+
+        <nb-user *ngIf="!collapsed"
+        name="Maximo Lanza" 
+        onlyPicture='true'
+        title="Software Developer"
+        picture="https://i.imgur.com/fi0KwgG.png"
+        size="large"
+        ></nb-user>  
        <!--
               <button nbButton fullWidth status="primary">Curriculum</button>
               <button nbButton fullWidth status="success">CV</button>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CvComponent } from './pages/cv/cv.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 
 const routes: Routes = [
@@ -16,12 +17,16 @@ const routes: Routes = [
     data: { title: 'Chat' }
   },
   { path: '',
-    redirectTo: '/Chat',
+    redirectTo: '/Inicio',
     pathMatch: 'full'
   },{
     path: 'Contacto',
     component: ContactComponent,
     data: { title: 'Contacto' }
+  },{
+    path: 'Inicio',
+    component: InicioComponent,
+    data: { title: 'Inicio' }
   }
 ];
 

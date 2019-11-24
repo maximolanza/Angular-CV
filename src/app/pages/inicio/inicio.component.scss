@@ -1,6 +1,6 @@
 body {
     background-color: #272727;
-    padding: 50px;
+    padding: 10px;
   }
   
   .fakeButtons {
@@ -29,7 +29,7 @@ body {
   }
   
   .fakeMenu {
-    width: 20%px;
+    width: 350px;
     box-sizing: border-box;
     height: 25px;
     background-color: #bbb;
@@ -41,7 +41,7 @@ body {
   .fakeScreen {
     background-color: #151515;
     box-sizing: border-box;
-    width: 100%;
+    width: 350px;
     margin: 0 auto;
     padding: 10px;
     border-bottom-left-radius: 5px;
@@ -50,7 +50,7 @@ body {
   
   p {
     position: relative;
-    left: 15%;
+    left: 50%;
     margin-left: -8.5em;
     text-align: left;
     font-size: 1.25em;

@@ -16,28 +16,18 @@ export class ChatComponent implements OnInit {
   ];
 
   constructor(protected chatService: ChatService) {
-    /*this.chatService.getMessage('welcome').subscribe(data => {
-      this.respuesta= data;
-      //this.messages.push(botReply2);
-    });*/
-    //this.chatService.getMessage('bienvenido').subscribe(data => {
-      //Hola. ¿Cómo estas? Gracias por tomarte un tiempo de visitar mi página! Si tenes alguna pregunta, estaría encantado de responderte.
-     // this.respuesta= data.toString();
-    //  this.messages = [];
-      this.messages.push({
+      /*this.messages.push({
         text: 'Hola. ¿Cómo estas? Gracias por tomarte un tiempo de visitar mi página! Si tenes alguna pregunta, estaría encantado de responderte.',
         date: new Date(),
         reply: false,
         user: {
           name: 'Maximo',
-         // avatar: 'https://i.gifer.com/no.gif',
          avatar: 'https://i.imgur.com/fi0KwgG.png',
         },
-      });
-    //});
-    //this.messages. = 
-   // this.chatService.getMessage('');
-  }
+      });*/
+    
+      }
+  
 
   
   sendMessage(event: any, userName: string, avatar: string, reply: boolean) {
@@ -48,10 +38,17 @@ export class ChatComponent implements OnInit {
         icon: 'file-text-outline',
       };
     });
+    this.respuesta='';
+
     this.chatService.getMessage(event.message).subscribe(data => {
       this.respuesta= data;
-      //this.messages.push(botReply2);
     });
+
+    if(this.respuesta.includes('página')){
+      this.chatService.getMessage(event.message).subscribe(data => {
+        this.respuesta= data;
+      });
+    }
     this.messages.push({
       text: event.message,
       date: new Date(),
@@ -60,37 +57,40 @@ export class ChatComponent implements OnInit {
       files: files,
       user: {
         name: userName,
-        avatar: avatar,
+        avatar: 'https://i.gifer.com/no.gif'
       },
     });
   
 
-/*
-    const botReply : breply = {
-      text: 'Hola!',
-        date: new Date(),
-        reply: false,
-        user: {
-          name: 'Maximo',
-          avatar: 'https://i.gifer.com/no.gif',
-        },
-    }*/
-    //if (botReply) {
-      setTimeout(() => { this.messages.push({
+
+  setTimeout(() => { 
+        this.messages.push({
         text: this.respuesta,
           date: new Date(),
           reply: false,
           user: {
             name: 'Maximo',
-            // avatar: 'https://i.gifer.com/no.gif',
             avatar: 'https://i.imgur.com/fi0KwgG.png',
           },
-      }); }, 500);
+      }); }
+  , 1500);
     }
   
-  //}
-
   ngOnInit() {
+
+    this.chatService.getMessage('hola').subscribe(data => {
+      //this.respuesta= data;
+      /**setTimeout(() => { this.messages.push({
+        text: this.respuesta,
+          date: new Date(),
+          reply: false,
+          user: {
+            name: 'Maximo',
+            avatar: 'https://i.imgur.com/fi0KwgG.png',
+          },
+      }); }, 20);*/
+    });
+   
   }
 
 }

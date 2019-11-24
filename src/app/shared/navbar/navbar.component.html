@@ -4,7 +4,34 @@
        
 
         <a href="#" (click)="toggle()"><i class="nb-menu"></i><nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a>
- </nb-layout-header>
+  
+
+
+        <nb-flip-card style='margin-left:5%'>
+                <nb-card-front>
+                  <nb-card accent="info" status="warning">
+                   
+                    <nb-card-body>
+                     Máximo Lanza
+                    </nb-card-body>
+                  </nb-card>
+                </nb-card-front>
+                <nb-card-back>
+                  <nb-card accent="primary" status="info">
+                 
+                    <nb-card-body>
+                            Software Developer
+                    </nb-card-body>
+                  </nb-card>
+                </nb-card-back>
+              </nb-flip-card>
+
+
+
+
+
+
+    </nb-layout-header>
 
     <nb-sidebar  state={{state}}>
             <nb-user *ngIf="collapsed"
@@ -15,13 +42,17 @@
         size="small"
         ></nb-user>  
 
+  
+        <img *ngIf="!collapsed" id="myImg" src="https://i.imgur.com/fi0KwgG.png" alt="Snow" style="width:100%;max-width:300px">
+
+        <!--
         <nb-user *ngIf="!collapsed"
         name="Maximo Lanza" 
         onlyPicture='true'
         title="Software Developer"
         picture="https://i.imgur.com/fi0KwgG.png"
         size="large"
-        ></nb-user>  
+        ></nb-user>  -->
        <!--
               <button nbButton fullWidth status="primary">Curriculum</button>
               <button nbButton fullWidth status="success">CV</button>
@@ -35,3 +66,8 @@
         <router-outlet></router-outlet>
     </nb-layout-column>
   </nb-layout>
+
+
+
+
+

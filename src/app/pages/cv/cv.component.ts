@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { experiencia} from '../../constant/experiencia';
 import { habilidades} from '../../constant/habilidades';
+import { NbSidebarService } from '@nebular/theme';
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
@@ -16,10 +17,25 @@ export class CvComponent implements OnInit {
   skillsAngular= this.skills[1].descriptions;
   skillsNodeJs= this.skills[2].descriptions;
   skillsOtros= this.skills[3].descriptions;
-  constructor() { }
-
-  ngOnInit() {
-    //console.log(this.tareasHB);
+  
+  constructor(private sidebarService: NbSidebarService) {
+   
   }
 
+  colapsar(){
+    this.sidebarService.collapse();
+  }
+  toggle() {
+    this.sidebarService.toggle(true);
+  }
+  public innerWidth: any;
+  ngOnInit() {
+    
+
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
+    if (this.innerWidth<850){
+      this.colapsar();
+    }
+  }
 }

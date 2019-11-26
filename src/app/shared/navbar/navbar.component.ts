@@ -36,8 +36,12 @@ export class NavbarComponent implements OnInit {
     this.collapsed= false;
   }
 
+  /*colapsar(){
+    this.sidebarService.collapse();
+  }*/
   toggle() {
     this.sidebarService.toggle(true);
+   
     if (this.collapsed){
       this.collapsed=false;
     }else{

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { breply } from './botReply';
 import { ChatService } from './chat.service';
+import { NbSidebarService } from '@nebular/theme';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ChatComponent implements OnInit {
     
   ];
 
-  constructor(protected chatService: ChatService) {
+  constructor(protected chatService: ChatService,private sidebarService: NbSidebarService) {
       /*this.messages.push({
         text: 'Hola. ¿Cómo estas? Gracias por tomarte un tiempo de visitar mi página! Si tenes alguna pregunta, estaría encantado de responderte.',
         date: new Date(),
@@ -75,9 +76,24 @@ export class ChatComponent implements OnInit {
       }); }
   , 1500);
     }
+    
   
-  ngOnInit() {
-
+    colapsar(){
+      this.sidebarService.collapse();
+    }
+    toggle() {
+      this.sidebarService.toggle(true);
+    }
+    
+    public innerWidth: any;
+    ngOnInit() {
+      
+  
+      this.innerWidth = window.innerWidth;
+      console.log(this.innerWidth);
+      if (this.innerWidth<850){
+        this.colapsar();
+      }
     this.chatService.getMessage('hola').subscribe(data => {
       //this.respuesta= data;
       /**setTimeout(() => { this.messages.push({

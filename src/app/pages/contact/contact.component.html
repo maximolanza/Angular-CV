@@ -47,11 +47,11 @@
     <nb-card-header>Enviar mail</nb-card-header>
     <nb-card-body class="example-items-rows">
       
-        <input type="text" nbInput fullWidth fieldSize="small" placeholder="Nombre/mail" [(ngModel)]="inputMail">
+        <input id="inputMail" type="text" nbInput fullWidth fieldSize="small" placeholder="Nombre/mail" [(ngModel)]="inputMail">
       <!--  <input type="text" nbInput fullWidth fieldSize="small" placeholder="email@ejemplo.com" [(ngModel)]="inputMail">-->
       <!--  <input type="text" nbInput fullWidth fieldSize="small" placeholder="Asunto" [(ngModel)]="inputSubject">-->
-        <textarea nbInput fullWidth placeholder="Mensaje" [(ngModel)]="inputMensaje"></textarea>
-        <button fullWidth nbButton outline status="info" (click)="sendMail('bottom-left', 'success')" >Enviar</button>
+        <textarea id="inputMessage" nbInput fullWidth placeholder="Mensaje" [(ngModel)]="inputMensaje"></textarea>
+        <button fullWidth nbButton outline status="info" (click)="sendMail('bottom-left', 'success',2000)" >Enviar</button>
     </nb-card-body>
   </nb-card>
 </div>

@@ -1,8 +1,30 @@
-::ng-deep nb-layout-column {
-    justify-content: center;
-    display: flex;
-  }
+#container{
+  justify-content: center;
+  display: flex;
+}
+
+  
+  $break-small: 500px;
+  $break-large: 1200px;
+
+
   nb-chat {
-    width: 500px;
+    
+    
     height: 80vw;
+    
+    @media screen and (max-width: $break-small) {
+      width: 100%;
+      float: none;
+    }
+    @media screen and (min-width: $break-large) {
+      width: 500px;
+      float: right;
+     
+    }
   }
+
+
+  
+
+

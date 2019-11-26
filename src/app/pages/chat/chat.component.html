@@ -1,4 +1,5 @@
-<nb-chat title="Maximo" size="medium" status="primary">
+<div id="container">
+<nb-chat id="chat" title="Maximo" size="medium" status="primary">
     <nb-chat-message *ngFor="let message of messages"
                      [type]="message.type"
                      [message]="message.text"
@@ -13,3 +14,10 @@
     <nb-chat-form (send)="sendMessage($event, 'Visitante', 'http://www.reactiongifs.com/r/wnd1.gif', true)" [showButton]="false" [dropFiles]="true">
     </nb-chat-form>
   </nb-chat>
+</div>
+  <!--
+    ::ng-deep nb-layout-column {
+    justify-content: center;
+    display: flex;
+  }
+-->

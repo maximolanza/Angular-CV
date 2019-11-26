@@ -1,15 +1,30 @@
-<nb-card size="large">
+<!--<nb-card size="large">
         <nb-card-body>
           <nb-stepper orientation="horizontal">
             <nb-step label="Experiencia">
                 <h5>Experiencia</h5>
-              <h6>Hospital Britanico</h6>
+              <h6>Hospital Britanico  [2019-09-25 a la actualidad]</h6>
+              <nb-card size="small">
+                  <nb-card-header>
+                  Tareas
+                  </nb-card-header>
+                  <ul>
+                    <li *ngFor="let t of tareas">
+                      {{ t.descripcion }}
+                    </li>
+                  </ul>
+                </nb-card>
               <p class="lorem">
-                Me desempeño en las tareas de desarrollo en Genexus (nuevas funcionalidades y modificación de funcionalidades existetes).
-                Control y seguimiento de incidentes.
-                Analisis de datos con SQL Server Managemen y generación de reportes.
-                Integración de grupo de innovación del sector de Desarrollo.
-                Atención telefónica de 2do nivel y acceso remoto.
+
+
+                 Desarrollo GeneXus (nuevas funcionalidades y modificación de funcionalidades existetes)
+                 Control y seguimiento de incidentes.
+                  Analisis de datos con SQL Server Management.
+                 Integración de grupo de innovación del sector de Desarrollo.
+                 Atención telefónica de 2do nivel y acceso remoto.
+                  Generación de reportes SQL,
+                 Control de incidentes en Mirth,
+                  Control de incidentes en Modulab
               </p>
               <h6>Emestudio</h6>
               <p class="lorem">
@@ -76,3 +91,214 @@
           </nb-stepper>
         </nb-card-body>
       </nb-card>
+    -->
+<!--
+    <div class="row">
+      <div class="column">
+          <nb-card id="hb" accent="info" responsive="true">
+              <nb-card-header>Hospital Británico</nb-card-header>
+              <nb-card-body>
+                  <ul *ngFor="let t of tareasHB">
+                      <li>
+                        {{ t.descripcion }}
+                      </li>
+                    </ul>
+              </nb-card-body>
+            </nb-card>
+
+      </div>
+      <div class="column">
+          <nb-card id="eme" accent="danger">
+              <nb-card-header>Emestudio</nb-card-header>
+              <nb-card-body>
+                  <ul *ngFor="let e of tareasE">
+                      <li>
+                        {{ e.descripcion }}
+                      </li>
+                    </ul>
+              </nb-card-body>
+            </nb-card>
+      </div>
+    </div>
+-->
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+      
+    <div class="card-row">
+        
+        <div class="card-col">
+            <h3> Experiencia Laboral</h3>
+          <nb-card size="medium" status="control">
+              <nb-card-header>Hospital Británico  </nb-card-header>
+              <nb-card-body>
+                  <ul *ngFor="let t of tareasHB">
+                      <li>
+                        {{ t.descripcion }}
+                      </li>
+                    </ul>
+              </nb-card-body>
+          </nb-card>
+        </div>
+
+        <div class="card-col">
+            <h3> Habilidades </h3>
+            <nb-card dark size="tiny" status="success">
+              <nb-card-header><font color="Black">Java</font></nb-card-header>
+              <nb-card-body >
+                <div id="tagcontainer" >
+                  <span *ngFor="let s of skillsJava" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                     
+                </div>   
+              </nb-card-body>
+            </nb-card>
+            <nb-card size="tiny" status="success">
+              <nb-card-header><font color="Black">Angular</font></nb-card-header>
+              <nb-card-body >
+                  <div id="tagcontainer" >
+                    <span *ngFor="let s of skillsAngular" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                          
+                  </div>   
+                </nb-card-body>
+            </nb-card>
+          </div>
+      </div>
+      <div class="card-row">
+       
+          <div class="card-col">
+            <nb-card size="medium" status="control">
+                <nb-card-header>Emestudio</nb-card-header>
+              <nb-card-body>
+                  <ul *ngFor="let e of tareasE">
+                      <li>
+                        {{ e.descripcion }}
+                      </li>
+                    </ul>
+              </nb-card-body>
+            </nb-card>
+          </div>
+          
+          <div class="card-col">
+              <nb-card size="tiny" status="success">
+                <nb-card-header><font color="Black">NodeJs</font></nb-card-header>
+                <nb-card-body >
+                    <div id="tagcontainer" >
+                      <span *ngFor="let s of skillsNodeJS" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                             
+                    </div>   
+                  </nb-card-body>
+              </nb-card>
+              <nb-card size="tiny" status="success">
+                <nb-card-header><font color="Black">Otros</font></nb-card-header>
+                <nb-card-body >
+                    <div id="tagcontainer" >
+                      <span *ngFor="let s of skillsOtros" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                            
+                    </div>   
+                  </nb-card-body>
+              </nb-card>
+            </div>
+        </div>
+      -->
+
+      <div class="resume-wrapper">
+  <section class="experience section-padding">
+      <div class="container">
+        <h3 class="experience-title">Experiencia</h3>
+        
+        <div class="experience-wrapper">
+          <div class="company-wrapper clearfix">
+            <div class="experience-title">Hospital Británico</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+            <div class="time">Set 2017 - Actualidad</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+          </div>
+          
+          <div class="job-wrapper clearfix">
+            <div class="experience-title">Desarrollador GeneXus </div> <!-- JOB TITLE  -->
+            <div class="company-description">
+                <ul *ngFor="let t of tareasHB">
+                    <li>
+                      {{ t.descripcion }}
+                    </li>
+                  </ul>
+            </div>
+          </div>
+          
+          <div class="company-wrapper clearfix">
+            <div class="experience-title">Emestudio</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+            <div class="time">Enero 2015 - Mayo 2016</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+          </div>
+          
+           <div class="job-wrapper clearfix">
+            <div class="experience-title">Soporte Técnico</div> <!-- JOB TITLE  -->
+            <div class="company-description">
+                <ul *ngFor="let t of tareasE">
+                    <li>
+                      {{ t.descripcion }}
+                    </li>
+                  </ul>
+            </div>
+          </div>
+          
+         
+          
+        </div><!--Skill experience-->
+      </div>
+  </section>
+
+  <section class="profile section-padding">
+      <div class="container">
+          <h3 class="profile-title">Habilidades</h3>
+          <div>
+          <h5 class="profile-subtitle"> Java</h5>
+          <hr>
+          <div id="tagcontainer" >
+              <span *ngFor="let s of skillsJava" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                 
+            </div>  
+            <hr>
+          </div>
+
+          <div>
+              <h5 class="profile-subtitle"> Angular</h5>
+              <hr>
+              <div id="tagcontainer" >
+                  <span *ngFor="let s of skillsAngular" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                     
+                </div>  
+                <hr>
+              </div>
+
+              <div>
+                  <h5 class="profile-subtitle"> NodeJs (Básico)</h5>
+                  <hr>
+                  <div id="tagcontainer" >
+                      <span *ngFor="let s of skillsNodeJs" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                         
+                    </div>  
+                    <hr>
+                  </div>
+                  <div>
+                      <h5 class="profile-subtitle"> Otros</h5>
+                      <hr>
+                      <div id="tagcontainer" >
+                          <span *ngFor="let s of skillsOtros" class="badge badge-pill badge-light"> <font color="white">{{s.tag}}</font> </span>
+                             
+                        </div>  
+                        <hr>
+                      </div>
+        </div>
+    </section>
+  </div>

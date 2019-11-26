@@ -26,8 +26,6 @@ export class ChatService {
   }*/
 
  
-
-
   getMessage(Message : String): Observable<any>{
 
       const httpOptions = {

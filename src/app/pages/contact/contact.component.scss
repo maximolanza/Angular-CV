@@ -1,7 +1,21 @@
-.largo {
+.largo,.mail {
     width:100%;
 }
 
 input, textarea {
     margin-top: 10px;
 }
+
+textarea {
+  height: 100px;
+}
+
+::ng-deep nb-layout-column {
+    height: 80vw;
+  }
+
+  /*#container{
+    justify-content: center;
+    display: flex;
+    margin-left: 5%;
+  }*/

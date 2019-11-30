@@ -1,13 +1,15 @@
 .largo,.mail {
     width:100%;
+
 }
+
 
 input, textarea {
     margin-top: 10px;
 }
 
 textarea {
-  height: 100px;
+  height: 200px;
 }
 
 ::ng-deep nb-layout-column {

@@ -1,56 +1,22 @@
 <div class="container">
-<nb-card class="largo">
-    <nb-card-body>
-        <!--
-        <nb-icon icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
--->
-
-
-<!-- BOTONES -->
-<!--
-        <button nbButton  ghost status="primary"><nb-icon icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon><a href="tel:+598099941516">099941516</a> </button>
-        <button nbButton  ghost shape='round' status="success"><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></button>
-        <button nbButton  ghost status="danger"><nb-icon icon="google-outline" [options]="{ animation: { type: 'zoom' } }" style="margin-right: 0px;padding-right:0px;"></nb-icon>mail<nb-icon icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></button>
-  -->    
-  
-  <!-- Este es la posta -->
-    <!--
-  <a id="tel" href="tel:+598099941516"><nb-icon nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a>
- <a id="linkedIn" target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a>
-   <nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
- -->
- <nb-actions size="medium" fullWidth>
-    <nb-action  ><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></nb-action>
-    <nb-action ><a href="tel:+598099941516"><nb-icon  nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a></nb-action>
-    <nb-action nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"><nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></nb-action>
-  </nb-actions>
-<!--<nb-icon icon="google-outline" [options]="{ animation: { type: 'zoom' } }" style="margin-right: 0px;padding-right:0px;"></nb-icon>
-   -->
-  <!--
-      <nb-actions size="small" >
-        <nb-action icon="at-outline"></nb-action>
-        <nb-action icon="linkedin-outline"></nb-action>
-          <nb-action title='099 94 15 16' icon="phone-outline"></nb-action> 
-        <nb-action icon="google-outline"></nb-action>
-      
-       
+<!--<nb-card class="largo">
+      <nb-card-body>
+        <nb-actions size="small" fullWidth>
+          <nb-action  ><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></nb-action>
+          <nb-action ><a href="tel:+598099941516"><nb-icon  nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a></nb-action>
+          <nb-action nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"><nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></nb-action>
       </nb-actions>
-     --> 
-      
-
     </nb-card-body>
   </nb-card>
-
+-->
 
   
   <nb-card class="mail">
-    <nb-card-header>Enviar mail</nb-card-header>
+    <nb-card-header id="headermail">Enviar un mail</nb-card-header>
     <nb-card-body class="example-items-rows">
       
         <input id="inputMail" type="text" nbInput fullWidth fieldSize="small" placeholder="Nombre/mail" [(ngModel)]="inputMail">
-      <!--  <input type="text" nbInput fullWidth fieldSize="small" placeholder="email@ejemplo.com" [(ngModel)]="inputMail">-->
-      <!--  <input type="text" nbInput fullWidth fieldSize="small" placeholder="Asunto" [(ngModel)]="inputSubject">-->
-        <textarea id="inputMessage" nbInput fullWidth placeholder="Mensaje" [(ngModel)]="inputMensaje"></textarea>
+         <textarea id="inputMessage" nbInput fullWidth placeholder="Mensaje" [(ngModel)]="inputMensaje"></textarea>
         <button fullWidth nbButton outline status="info" (click)="sendMail('bottom-left', 'success',2000)" >Enviar</button>
     </nb-card-body>
   </nb-card>

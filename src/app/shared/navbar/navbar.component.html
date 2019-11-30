@@ -3,13 +3,18 @@
    <nb-layout-header fixed>
        
 
-        <a href="#" (click)="toggle()"><i class="nb-menu"></i><nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a>
+        <a href="#" (click)="toggle()">
+          <i class="nb-menu">
+          </i><nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }">
+          </nb-icon>
+        </a>
+       
   
 
 
-        <nb-flip-card style='margin-left:5%'>
+        <nb-flip-card style='margin-left:5%;margin-top:10px'>
                 <nb-card-front>
-                  <nb-card accent="info" status="warning">
+                  <nb-card  status="warning">
                    
                     <nb-card-body>
                      Máximo Lanza
@@ -17,7 +22,7 @@
                   </nb-card>
                 </nb-card-front>
                 <nb-card-back>
-                  <nb-card accent="primary" status="info">
+                  <nb-card  status="info">
                  
                     <nb-card-body>
                             Software Developer
@@ -26,25 +31,43 @@
                 </nb-card-back>
               </nb-flip-card>
 
+              <!--
+              <button ghost nbButton >Descargar<nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon></button>
+                -->
+              <a style="margin-left: auto;text-decoration: none;" href="../files/Maximo_Lanza_CV_2019.pdf" download>
+                <!-- <i class="nb-menu">
+                  
+                  </i>
+                  <p> Descarga
+                    <nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }">                
+                    </nb-icon>
+                  </p>-->
+                  <button ghost nbButton >Descargar<nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon></button>
 
-
-
-
+              </a>
 
     </nb-layout-header>
 
     <nb-sidebar responsive="true">
-            <nb-user *ngIf="collapsed"
+      <nb-user 
+      *ngIf="collapsed"
         title=''
         name=''
         onlyPicture='true'
-        picture="https://i.imgur.com/fi0KwgG.png"
+        shape="round"
+        picture={{avatar}}
         size="small"
-        ></nb-user>  
-
+        >
+       
+      </nb-user>  
+     
+ <!-- picture="https://i.imgur.com/fi0KwgG.png" -->
   
-        <img *ngIf="!collapsed" id="myImg" src="https://i.imgur.com/fi0KwgG.png" alt="Snow" style="width:100%;max-width:300px">
-
+      <!--src="https://i.imgur.com/fi0KwgG.png"--> 
+     
+      <div class="imgContainer">
+          <img *ngIf="!collapsed" id="myImg" src={{avatar}} alt="Máximo Lanza" />
+        </div>
         <!--
         <nb-user *ngIf="!collapsed"
         name="Maximo Lanza" 
@@ -59,8 +82,39 @@
               <button nbButton fullWidth status="danger">Danger</button>
               
 -->
-<nb-menu [items]="items"></nb-menu>
-    </nb-sidebar>
+<nb-menu id="ItemsMenu" [items]="items"  ></nb-menu>
+<!--
+<div style="padding-top:20%; justify-content: center;">
+ 
+    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+
+</div>-->
+<!--
+<nb-actions *ngIf="!collapsed" size="small" width="100%" responsive="true">
+    <nb-action  ><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></nb-action>
+    <nb-action ><a href="tel:+598099941516"><nb-icon  nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a></nb-action>
+    <nb-action nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"><nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></nb-action>
+</nb-actions>-->
+<div class="iconsContainer">
+    <div id="wrapper">
+     
+          <a class="contactIcon" target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'>
+            <nb-icon status="info" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+          </a>
+     
+    
+        <a class="contactIcon middle" href="tel:+59899941516">
+          <nb-icon  status="success" nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon>
+        </a>
+        <a class="contactIcon" href="mailto:max.slanza@gmail.com">
+        <nb-icon status="danger"  id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+        </a>
+    </div>
+</div>
+
+  </nb-sidebar>
 
     <nb-layout-column>
         <router-outlet></router-outlet>

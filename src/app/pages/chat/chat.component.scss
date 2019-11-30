@@ -9,16 +9,18 @@
 
 
   nb-chat {
-    
+    width: 80%;
     
     height: 80vw;
-    
+   
     @media screen and (max-width: $break-small) {
-      width: 100%;
+      //width: 500px;
+      height: 20%;
       float: none;
     }
     @media screen and (min-width: $break-large) {
-      width: 500px;
+      margin-top:5%;
+      height: 80%;
       float: right;
      
     }

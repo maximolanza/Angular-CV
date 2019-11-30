@@ -83,7 +83,7 @@
       </div>
       -->  
      
-      <div class="content">
+      <div id="contentfront" class="content">
          
           <div  class="card">
              
@@ -94,8 +94,6 @@
               <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font> 
                
               </div>
-             
-              
             </div>
             <div   class="card__side card__side--back">
               <!-- Back Content -->
@@ -120,3 +118,46 @@
               <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
             </div>
           </div>
+          </div>
+
+
+           <div id="contentback" class="content">
+         
+          <div  class="card">
+             
+            <div  class="card__side card__side--back">
+              <!-- Front Content -->
+          <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
+              <div class="card__cont"> 
+              <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font> 
+               
+              </div>
+             
+              
+            </div>
+            <div   class="card__side card__side--front">
+              <!-- Back Content -->
+              <div class="card__cta">
+                <!--<p><span class="purple">const</span> aboutMe <span class="cyan">=</span> 
+                  <br />
+                  <span class="space red">name</span><span class="cyan">:</span> <span class="green">'laura pinto'</span>,
+                  <br/>
+                  <span class="space red">email</span><span class="cyan">:</span> <span class="green">'lauraalpinto@gmail.com</span>',
+                  <br/>
+                  <span class="space red">position</span><span class="cyan">:</span> <span class="green">'front-end developer'</span>,
+                  <br/>
+                  <span class="space red">website</span><span class="cyan">:</span> <span class="green">'lauraalpinto.github.io'</span>
+                  <br/> ;
+                </p>-->
+                <p  *ngFor="let l of lineas">
+                    <!-- <span  class="dollar"></span>  -->
+                    <span class="green">{{l.linea}}</span>
+                   </p> 
+                   
+              </div>
+              <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
+            </div>
+          </div>
+</div>
+
+

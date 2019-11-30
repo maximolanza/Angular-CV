@@ -1,5 +1,4 @@
 
-
 export const aboutme = {
     "avatar" : 'https://i.imgur.com/bY0ksKF.png',
     "nacimiento" : '1993-08-21',

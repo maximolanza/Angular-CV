@@ -248,19 +248,9 @@ body {
     justify-content: center;
     display: absolute;
   }
- 
-  #terminalbody {
-    -webkit-box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.81); 
-    box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.81);
-    background-color: #121212;
-    width: 60%;
-    height: 80%;
-   
-    margin: auto;
+ */
 
-    padding: 20px;
-    }
-
+/*
     .dollar:before {
       content: '> ';
       color: #52a563;
@@ -534,6 +524,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .card {
@@ -541,7 +532,7 @@ body {
  // perspective: 150rem;
   height: 15%;
   width: 80%;
-
+  margin-top:-30%;
   position: relative;
 
   &__side {
@@ -607,3 +598,66 @@ body {
     }
   }
 }
+/*
+.content {
+@media screen and (max-width: $break-small) {
+     visibility: hidden;
+     // float: none;
+    }
+    @media screen and (min-width: $break-large) {
+      visibility: visible;
+     // float: right;
+     
+    }
+
+  }  
+*/
+/*
+  #terminalbody {
+
+    @media screen and (max-width: $break-small) {
+      visibility: visible;
+      -webkit-box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.81); 
+    box-shadow: 10px 8px 10px 5px rgba(0,0,0,0.81);
+    background-color: #121212;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    padding: 20px;
+      // float: none;
+     }
+     @media screen and (min-width: $break-large) {
+       
+       visibility: hidden;
+      
+     }
+    
+    }*/
+
+
+
+    #contentfront {
+      @media screen and (max-width: $break-small) {
+           visibility: hidden;
+          position: absolute;
+          }
+          @media screen and (min-width: $break-large) {
+            visibility: visible;
+
+           
+          }
+      
+        }  
+
+
+        #contentback {
+          @media screen and (max-width: $break-small) {
+              visibility: visible;
+              
+              }
+              @media screen and (min-width: $break-small+1) {
+                visibility: hidden;
+              
+              }
+          
+            }  

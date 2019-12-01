@@ -11,8 +11,23 @@
     padding-bottom:30px;
   }
 
+  $break-small: 500px;
+  $break-large: 501px;
 
-  
+  #flipcardmax{
+    margin-left:5%;
+    margin-right:5%;
+    margin-top: 25px;
+    /*@media screen and (max-width: $break-small) {
+      margin-top:10%
+     }
+     @media screen and (min-width: $break-large) {
+      margin-top:%
+
+      
+     }*/
+    
+  }
 
   .Icon{
     display:inline-block;

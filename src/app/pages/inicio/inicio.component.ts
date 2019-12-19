@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NbSidebarService, NbToggleModule } from '@nebular/theme';
 import { aboutme } from '../../constant/aboutme';
-
+import { mailmensaje } from 'src/app/constant/mailmensaje';
 import Typewriter from 't-writer.js';
+import { MailsenderService } from '../contact/mailsender.service';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -22,7 +23,7 @@ export class InicioComponent implements OnInit {
    json = aboutme.json;
    llave1 = "{";
    llave2 = "}";
-  constructor(private sidebarService: NbSidebarService) {
+  constructor(private sidebarService: NbSidebarService,protected mailSender : MailsenderService,) {
    
   }
 
@@ -38,12 +39,27 @@ export class InicioComponent implements OnInit {
 
 
   ngOnInit() {
+    let mensaje : mailmensaje;
     this.innerWidth = window.innerWidth;
       console.log(this.innerWidth);
       if (this.innerWidth<850){
         this.colapsar();
       }
      
+     
+      mensaje = {
+        "mail": "Inicio",
+        "mensaje": "Connection works"
+      }
+      //const current = localStorage.getItem('Current');
+      //if (current.match("Yes")==null) {
+       // localStorage.setItem('Current', 'Yes');
+        this.mailSender.sendMailPOST(mensaje);
+      //}
+     
+     
+
+
     }
   }
   

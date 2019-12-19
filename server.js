@@ -12,5 +12,6 @@ app.listen(process.env.PORT || 8080);
   
 
   app.use('/*',function(req, res) {
-    res.sendfile(__dirname + '../../dist/index.html');
+    //res.sendfile(__dirname + '../../dist/index.html');
+    res.sendFile(path.join(__dirname+'/dist/webcv/index.html'));
 });

@@ -39,23 +39,21 @@ export class InicioComponent implements OnInit {
 
 
   ngOnInit() {
-    let mensaje : mailmensaje;
+  
     this.innerWidth = window.innerWidth;
       console.log(this.innerWidth);
       if (this.innerWidth<850){
         this.colapsar();
       }
      
-     
+      /* Mail Check */
+      let mensaje : mailmensaje;
       mensaje = {
         "mail": "Inicio",
         "mensaje": "Connection works"
       }
-      //const current = localStorage.getItem('Current');
-      //if (current.match("Yes")==null) {
-       // localStorage.setItem('Current', 'Yes');
-        this.mailSender.sendMailPOST(mensaje);
-      //}
+     this.mailSender.sendMailPOST(mensaje);
+   
      
      
 

@@ -217,12 +217,14 @@ $time:0.6s;
   }
   
   .section-padding {
+    position: relative;
    padding:60px 60px 40px 40px;
    @include breakpoint(brother-bear) { padding:80px 15% 40px 10%; }
    @include breakpoint(baby-bear) { padding:40px 10% 20px 5%; }
   }
   
   .section-wrapper {
+    position: relative;
     width:50%;
     float:left;
     text-align:left;

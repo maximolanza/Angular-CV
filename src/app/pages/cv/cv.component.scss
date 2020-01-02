@@ -171,15 +171,15 @@ $time:0.6s;
     @media screen and (max-width: 500px) {
       min-height:80%;
       min-height:6vh;
-      height: 50%;
+      height: 65%;
     }
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 850px) {
       height: 100%;
       min-height:100%;
-    min-height:100vh;
+    min-height:150vh;
      
     }
-    height: 50%;
+    height: 60%;
     float:left;
     position:relative;
     color:$skillsColor;
@@ -254,10 +254,21 @@ $time:0.6s;
   }
   
   .container {
-    min-height:600px;
+    min-height:800px;
   } 
   
   .profile {
+    @media screen and (max-width: 500px) {
+      min-height:80%;
+      min-height:6vh;
+      height: 65%;
+    }
+    @media screen and (min-width: 850px) {
+      height: 100%;
+      min-height:100%;
+    min-height:150vh;
+     
+    }
     //font-family: 'Open Sans', sans-serif;
     font-size:16px;
     line-height:1.5em;

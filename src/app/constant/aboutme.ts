@@ -8,6 +8,7 @@ export const aboutme = {
     "papellido" : 'Lanza',
     "sapellido" : 'Aguirre',
     "direccion" : '18 de Julio 2030',
+    "gmailpdf" : 'https://drive.google.com/file/d/1roXSx84yFtM2W7mNXELFXFcfY0bPfE5l/view?usp=sharing',
     "presentacion" :[
     /*{"principal":"si","linea" :"Con un perfil técnico y práctico, me defino como una persona autodidacta,"  },
     {"principal":"no","linea" :"responsable y proactivo, con fuerte orientación al cumplimiento de"  },

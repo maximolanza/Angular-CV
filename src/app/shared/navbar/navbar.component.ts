@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   public innerWidth: any;
   collapsed : boolean; 
   avatar = aboutme.avatar;
+  link = aboutme.gmailpdf;
 
  
   

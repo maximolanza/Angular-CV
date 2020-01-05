@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
     }
    
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
+   // console.log(this.innerWidth);
     
     if (this.innerWidth<850){
        if (this.collapsed){
@@ -76,15 +76,17 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
 
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
+    //console.log(this.innerWidth);
     if (this.innerWidth<1200){
       this.collapsed=true;
     }
 }
     
 onClickedOutside(e: Event) {
-  console.log('Clicked outside:', e);
-  if (!this.collapsed){
+  
+  //console.log('Clicked outside:', e);
+  console.log(e['screenY']);
+  if (!this.collapsed && !(e['screenX']>19 && e['screenX']<40 && e['screenY']>128 && e['screenY']<151) ){
     this.sidebarService.toggle(true);
     this.collapsed=true;     
     }

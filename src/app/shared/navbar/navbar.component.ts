@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, HostListener } from '@angul
 import { NbMenuItem } from '@nebular/theme';
 import { NbSidebarService } from '@nebular/theme';
 import { aboutme} from '../../constant/aboutme';
+import { ClickOutsideModule } from 'ng-click-outside';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -81,6 +82,13 @@ export class NavbarComponent implements OnInit {
     }
 }
     
-  
+onClickedOutside(e: Event) {
+  console.log('Clicked outside:', e);
+  if (!this.collapsed){
+    this.sidebarService.toggle(true);
+    this.collapsed=true;     
+    }
+   
+}
 
 }

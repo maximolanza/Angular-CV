@@ -15,6 +15,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { MailsenderService } from './pages/contact/mailsender.service';
 import { FormsModule } from '@angular/forms';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,8 @@ import { FormsModule } from '@angular/forms';
     NbTooltipModule,
     FormsModule,
     NbListModule,
-    NbToastrModule.forRoot()
-    
+    NbToastrModule.forRoot(),
+    ClickOutsideModule
    
   ],
   providers: [ChatService,MailsenderService,NbToastrService ],

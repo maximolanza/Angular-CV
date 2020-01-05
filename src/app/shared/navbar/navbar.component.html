@@ -51,7 +51,7 @@
 
     </nb-layout-header>
 
-    <nb-sidebar responsive="true">
+    <nb-sidebar (clickOutside)="onClickedOutside($event)" responsive="true">
       <nb-user 
       *ngIf="collapsed"
         title=''

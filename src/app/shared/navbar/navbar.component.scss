@@ -1,5 +1,8 @@
-
-
+/*
+::ng-deep nb-layout-column {
+  //height: 80vw;
+  height: 100%;
+}*/
 #myImg {
     border-radius: 50%;
     width:100%;
@@ -51,7 +54,7 @@
     position: relative;
     text-align: center;
     justify-content: center;
-    height: 100%;
+    //height: 100%;
   }
 
   .contactIcon{
@@ -64,15 +67,12 @@
    
     text-align: center;
     justify-content: center;
-    //border-style: solid;
-   // border-width: 1px;
   }
 
   .icono{
     padding-top:25px;
     padding-bottom:25px;
-   /* margin-top:25px;
-    margin-bottom:25px;*/
+ 
   }
 
   

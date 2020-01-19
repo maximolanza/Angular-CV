@@ -52,7 +52,7 @@ export class InicioComponent implements OnInit {
         "mail": "Inicio",
         "mensaje": "Connection works"
       }
-     this.mailSender.sendMailPOST(mensaje);
+     this.mailSender.sendMailPOST(mensaje,false);
    
      
      

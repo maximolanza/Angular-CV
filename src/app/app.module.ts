@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule,NbSidebarModule, NbButtonModule,NbCardHeaderComponent,NbCardBodyComponent,NbCardComponent, NbMenuComponent, NbMenuItem, NbMenuItemComponent, NbIconComponent, NbMenuModule, NbChatModule, NbActionsModule, NbInputModule, NbUserModule, NbStepComponent, NbStepperModule, NbDialogModule, NbCardFooterComponent, NbDialogService, NbDialogContainerComponent, NbIconModule, NbCardModule, NbTooltipModule, NbListModule, NbToastrService, NbToastrModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule,NbSidebarModule, NbButtonModule,NbCardHeaderComponent,NbCardBodyComponent,NbCardComponent, NbMenuComponent, NbMenuItem, NbMenuItemComponent, NbIconComponent, NbMenuModule, NbChatModule, NbActionsModule, NbInputModule, NbUserModule, NbStepComponent, NbStepperModule, NbDialogModule, NbCardFooterComponent, NbDialogService, NbDialogContainerComponent, NbIconModule, NbCardModule, NbTooltipModule, NbListModule, NbToastrService, NbToastrModule, NbSpinnerModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CvComponent } from './pages/cv/cv.component';
@@ -49,7 +49,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     FormsModule,
     NbListModule,
     NbToastrModule.forRoot(),
-    ClickOutsideModule
+    ClickOutsideModule,
+    NbSpinnerModule
    
   ],
   providers: [ChatService,MailsenderService,NbToastrService ],

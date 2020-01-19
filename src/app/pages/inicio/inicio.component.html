@@ -1,163 +1,38 @@
-  <!--
-<div id="container1">
-
-  <div class=fakeMenu>
-        <div class="fakeButtons fakeClose"></div>
-        <div class="fakeButtons fakeMinimize"></div>
-        <div class="fakeButtons fakeZoom"></div>
+<div id="contentfront" class="content">
+  <div class="card">
+    <div class="card__side card__side--front">
+      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
+      <div class="card__cont">
+        <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font>
       </div>
-      <div class="fakeScreen">
-        <p class="line1">&#91;&nbsp;&ldquo;Hola!&rdquo;,<span class="cursor1">_</span></p>
-        <p class="line2">&nbsp;&nbsp;&ldquo;Soy desarrollador Junior.&rdquo;,<span class="cursor2">_</span></p>
-        <p class="line3">&nbsp;&nbsp;&ldquo;Te invito a ver mi página &rdquo;&nbsp;&#93;<span class="cursor3">_</span></p>
-        <p class="line4">><span class="cursor4">_</span></p>
+    </div>
+    <div class="card__side card__side--back">
+      <div class="card__cta">
+        <p *ngFor="let l of lineas">
+          <span class="green">{{l.linea}}</span>
+        </p>
       </div>
-
-
-
-
-      </div>
-
-      <div>
-
-          <nb-card accent="control">
-              <nb-card-header>Acerca de mi</nb-card-header>
-              <nb-card-body>
-               Soy estudiante de Tecnólogo en Informática en UTU - CEPT - UDELAR.
-
-
-              </nb-card-body>
-            </nb-card>
-
-      </div>-->
-      <!--
-      <div id="container"> 
-         
-        <div id="terminalbody" >   
-      
-        <p class="line-1 anim-typewriter" *ngFor="let l of lineas">
-        
-        {{l.linea}}
-          </p> 
-          
-        </div>
-     
-      </div> 
-    -->
-     <!-- <span  class="dollar"></span>  -->
-          <!-- json
-          <p class="line-1 anim-typewriter"> <span  class="dollar"></span>     <font color="orange"> {{llave1}}  </font>            </p> 
-          <p class="line-1 anim-typewriter" *ngFor="let j of json">      <font color="orange">  "{{j.cabezal}}  "</font>  :   <font color="green" >" {{j.value}}  "</font>,           </p> 
-          <p class="line-1 anim-typewriter">      <font color="orange"> {{llave2}} </font>             </p> 
-       
-          -->
-    
-      <!--
-      <div id="terminalbody">
-       
-          <p class="line1 anim-typewriter" >
-              <span  class="dollar"></span>  
-          {{lineas[0].linea}} <span class="cursor1">_</span>
-            </p> 
-          
-            <p class="line2 anim-typewriter" >
-                <span  class="dollar"></span>  
-            {{lineas[1].linea}} <span class="cursor1">_</span>
-              </p> 
-          
-              <p class="line3 anim-typewriter" >
-                  <span  class="dollar"></span>  
-              {{lineas[2].linea}} <span class="cursor1">_</span>
-                </p> 
-                <p class="line4 anim-typewriter" >
-                    <span  class="dollar"></span>  
-                {{lineas[3].linea}} <span class="cursor1">_</span>
-                  </p> 
-                
-                  <p class="line5 anim-typewriter" >
-                      <span  class="dollar"></span>  
-                  {{lineas[4].linea}} <span class="cursor1">_</span>
-                    </p> 
-       
-        <p class="line4">><span class="cursor4">_</span></p>
-      </div>
-      -->  
-     
-      <div id="contentfront" class="content">
-         
-          <div  class="card">
-             
-            <div  class="card__side card__side--front">
-              <!-- Front Content -->
-          <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
-              <div class="card__cont"> 
-              <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font> 
-               
-              </div>
-            </div>
-            <div   class="card__side card__side--back">
-              <!-- Back Content -->
-              <div class="card__cta">
-                <!--<p><span class="purple">const</span> aboutMe <span class="cyan">=</span> 
-                  <br />
-                  <span class="space red">name</span><span class="cyan">:</span> <span class="green">'laura pinto'</span>,
-                  <br/>
-                  <span class="space red">email</span><span class="cyan">:</span> <span class="green">'lauraalpinto@gmail.com</span>',
-                  <br/>
-                  <span class="space red">position</span><span class="cyan">:</span> <span class="green">'front-end developer'</span>,
-                  <br/>
-                  <span class="space red">website</span><span class="cyan">:</span> <span class="green">'lauraalpinto.github.io'</span>
-                  <br/> ;
-                </p>-->
-                <p  *ngFor="let l of lineas">
-                    <!-- <span  class="dollar"></span>  -->
-                    <span class="green">{{l.linea}}</span>
-                   </p> 
-                   
-              </div>
-              <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
-            </div>
-          </div>
-          </div>
-
-
-           <div id="contentback" class="content">
-         
-          <div  class="card">
-             
-            <div  class="card__side card__side--back">
-              <!-- Front Content -->
-          <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
-              <div class="card__cont"> 
-              <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font> 
-               
-              </div>
-             
-              
-            </div>
-            <div   class="card__side card__side--front">
-              <!-- Back Content -->
-              <div class="card__cta">
-                <!--<p><span class="purple">const</span> aboutMe <span class="cyan">=</span> 
-                  <br />
-                  <span class="space red">name</span><span class="cyan">:</span> <span class="green">'laura pinto'</span>,
-                  <br/>
-                  <span class="space red">email</span><span class="cyan">:</span> <span class="green">'lauraalpinto@gmail.com</span>',
-                  <br/>
-                  <span class="space red">position</span><span class="cyan">:</span> <span class="green">'front-end developer'</span>,
-                  <br/>
-                  <span class="space red">website</span><span class="cyan">:</span> <span class="green">'lauraalpinto.github.io'</span>
-                  <br/> ;
-                </p>-->
-                <p  *ngFor="let l of lineas">
-                    <!-- <span  class="dollar"></span>  -->
-                    <span class="green">{{l.linea}}</span>
-                   </p> 
-                   
-              </div>
-              <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon> 
-            </div>
-          </div>
+      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
+    </div>
+  </div>
 </div>
-
-
+<!--
+<div id="contentback" class="content">
+  <div class="card">
+    <div class="card__side card__side--back">
+      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
+      <div class="card__cont">
+        <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font>
+      </div>
+    </div>
+    <div class="card__side card__side--front">
+      <div class="card__cta">
+        <p *ngFor="let l of lineas">
+          <span class="green">{{l.linea}}</span>
+        </p>
+      </div>
+      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
+    </div>
+  </div>
+</div>
+-->

@@ -1,23 +1,15 @@
 <div class="container">
-<!--<nb-card class="largo">
-      <nb-card-body>
-        <nb-actions size="small" fullWidth>
-          <nb-action  ><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></nb-action>
-          <nb-action ><a href="tel:+598099941516"><nb-icon  nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a></nb-action>
-          <nb-action nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"><nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></nb-action>
-      </nb-actions>
-    </nb-card-body>
-  </nb-card>
--->
-
-  
-  <nb-card class="mail">
+  <nb-card class="mail" [nbSpinner]="loading"
+  nbSpinnerStatus="info"
+  nbSpinnerSize="large"
+  nbSpinnerMessage="">
     <nb-card-header id="headermail">Enviar un mail</nb-card-header>
     <nb-card-body class="example-items-rows">
-      
         <input id="inputMail" type="text" nbInput fullWidth fieldSize="small" placeholder="Nombre/mail" [(ngModel)]="inputMail">
          <textarea id="inputMessage" nbInput fullWidth placeholder="Mensaje" [(ngModel)]="inputMensaje"></textarea>
-        <button fullWidth nbButton outline status="info" (click)="sendMail('bottom-left', 'success',2000)" >Enviar</button>
+        <button fullWidth nbButton outline status="info" (click)="sendMailSpinner();" >Enviar</button>
     </nb-card-body>
   </nb-card>
+  
 </div>
+

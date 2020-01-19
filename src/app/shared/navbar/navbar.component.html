@@ -1,131 +1,78 @@
 <nb-layout>
-   
-   <nb-layout-header fixed>
-       
 
-        <a href="#" (click)="toggle()">
-          <i class="nb-menu">
-          </i><nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }">
-          </nb-icon>
+  <nb-layout-header fixed>
+
+
+    <a href="#" (click)="toggle()">
+      <i class="nb-menu">
+      </i>
+      <nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }">
+      </nb-icon>
+    </a>
+
+
+
+
+    <nb-flip-card id="flipcardmax">
+      <nb-card-front>
+        <nb-card status="warning">
+
+          <nb-card-body>
+            Máximo Lanza
+          </nb-card-body>
+        </nb-card>
+      </nb-card-front>
+      <nb-card-back>
+        <nb-card status="info">
+
+          <nb-card-body>
+            Software Developer
+          </nb-card-body>
+        </nb-card>
+      </nb-card-back>
+    </nb-flip-card>
+    <a style="margin-left: auto;text-decoration: none;padding-left:5%;" target="_blank"
+      href='https://drive.google.com/file/d/1d31iKUPrkCTVOkfOkPvkujEVJ4io-bdP/view?usp=sharing'>
+      PDF <nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon>
+    </a>
+
+  </nb-layout-header>
+
+
+  <!-- SIDEBAR -->
+  <nb-sidebar (clickOutside)="onClickedOutside($event)" responsive="true">
+    <nb-user *ngIf="collapsed" title=''  name='' onlyPicture='true' shape="round" picture={{avatar}} size="small">
+
+    </nb-user>
+    <div class="imgContainer">
+      <img *ngIf="!collapsed" id="myImg" src={{avatar}} alt="Máximo Lanza" />
+    </div>
+
+    <nb-menu id="ItemsMenu" [items]="items"></nb-menu>
+
+    <div class="iconsContainer">
+      <div id="wrapper">
+
+        <a class="contactIcon" target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'>
+          <nb-icon class="icono" status="info" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline"
+            [options]="{ animation: { type: 'zoom' } }"></nb-icon>
         </a>
-       
-  
 
 
-        <nb-flip-card id="flipcardmax">
-                <nb-card-front>
-                  <nb-card  status="warning">
-                   
-                    <nb-card-body>
-                     Máximo Lanza
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-front>
-                <nb-card-back>
-                  <nb-card  status="info">
-                 
-                    <nb-card-body>
-                            Software Developer
-                    </nb-card-body>
-                  </nb-card>
-                </nb-card-back>
-              </nb-flip-card>
-
-              <!--
-              <button ghost nbButton >Descargar<nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon></button>
-                -->
-              <a style="margin-left: auto;text-decoration: none;padding-left:5%;" target="_blank" href='https://drive.google.com/file/d/1d31iKUPrkCTVOkfOkPvkujEVJ4io-bdP/view?usp=sharing' >
-                <!-- <i class="nb-menu">
-                  
-                  </i>
-                  <p> Descarga
-                    <nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }">                
-                    </nb-icon>
-                  </p>-->
-                  <!--
-                  <button ghost nbButton >PDF <nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon></button>
-                  
-                -->    
-                PDF <nb-icon icon="download-outline" [options]="{ animation: { type: 'flip' } }"></nb-icon>
-              </a>
-
-    </nb-layout-header>
-
-    <nb-sidebar (clickOutside)="onClickedOutside($event)" responsive="true">
-      <nb-user 
-      *ngIf="collapsed"
-        title=''
-        name=''
-        onlyPicture='true'
-        shape="round"
-        picture={{avatar}}
-        size="small"
-        >
-       
-      </nb-user>  
-     
- <!-- picture="https://i.imgur.com/fi0KwgG.png" -->
-  
-      <!--src="https://i.imgur.com/fi0KwgG.png"--> 
-     
-      <div class="imgContainer">
-          <img *ngIf="!collapsed" id="myImg" src={{avatar}} alt="Máximo Lanza" />
-        </div>
-        <!--
-        <nb-user *ngIf="!collapsed"
-        name="Maximo Lanza" 
-        onlyPicture='true'
-        title="Software Developer"
-        picture="https://i.imgur.com/fi0KwgG.png"
-        size="large"
-        ></nb-user>  -->
-       <!--
-              <button nbButton fullWidth status="primary">Curriculum</button>
-              <button nbButton fullWidth status="success">CV</button>
-              <button nbButton fullWidth status="danger">Danger</button>
-              
--->
-<nb-menu id="ItemsMenu" [items]="items"  ></nb-menu>
-<!--
-<div style="padding-top:20%; justify-content: center;">
- 
-    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
-    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
-    <nb-icon  style="margin-right: 20%;margin-bottom: 20%" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
-
-</div>-->
-<!--
-<nb-actions *ngIf="!collapsed" size="small" width="100%" responsive="true">
-    <nb-action  ><a target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'><nb-icon nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></a></nb-action>
-    <nb-action ><a href="tel:+598099941516"><nb-icon  nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon></a></nb-action>
-    <nb-action nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"><nb-icon id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon></nb-action>
-</nb-actions>-->
-<div class="iconsContainer">
-    <div id="wrapper">
-     
-          <a class="contactIcon" target='blank_' href='https://www.linkedin.com/in/m%C3%A1ximo-lanza/'>
-            <nb-icon class="icono" status="info" nbTooltip="LinkedIn" nbTooltipPlacement="top" icon="linkedin-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
-          </a>
-     
-    
         <a class="contactIcon middle" href="tel:+59899941516">
-          <nb-icon class="icono" status="success" nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline" [options]="{ animation: { type: 'zoom' } }"> </nb-icon>
+          <nb-icon class="icono" status="success" nbTooltip="099 94 15 16" nbTooltipPlacement="top" icon="phone-outline"
+            [options]="{ animation: { type: 'zoom' } }"> </nb-icon>
         </a>
         <a class="contactIcon" href="mailto:max.slanza@gmail.com">
-        <nb-icon class="icono"
-         status="danger"  id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top" icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+          <nb-icon class="icono" status="danger" id="mail" nbTooltip="max.slanza@gmail.com" nbTooltipPlacement="top"
+            icon="at-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
         </a>
+      </div>
     </div>
-</div>
 
   </nb-sidebar>
 
-    <nb-layout-column>
-        <router-outlet></router-outlet>
-    </nb-layout-column>
-  </nb-layout>
-
-
-
-
-
+  <nb-layout-column>
+    <router-outlet ></router-outlet>
+  </nb-layout-column>
+</nb-layout>

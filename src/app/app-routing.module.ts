@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'Inicio',
     component: InicioComponent,
     data: { title: 'Inicio' }
+  },
+  {
+    path: '**',
+    redirectTo: '/Inicio'
   }
 ];
 

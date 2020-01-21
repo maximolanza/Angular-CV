@@ -16,6 +16,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { MailsenderService } from './pages/contact/mailsender.service';
 import { FormsModule } from '@angular/forms';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { Error404Component } from './pages/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     CvComponent,
     ChatComponent,
     ContactComponent,
-    InicioComponent
+    InicioComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

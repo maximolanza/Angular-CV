@@ -13,21 +13,21 @@ export class InicioComponent implements OnInit {
 
   /**/
   name = 'Angular';
-  @ViewChild('tw',{static : false}) typewriterElement;
-  @ViewChild('tw2',{static : false}) typewriterElement2;
-  @ViewChild('tw3',{static : false}) typewriterElement3;
+  @ViewChild('tw', { static: false }) typewriterElement;
+  @ViewChild('tw2', { static: false }) typewriterElement2;
+  @ViewChild('tw3', { static: false }) typewriterElement3;
   /**/
   public innerWidth: any;
-   aboutme = aboutme;
-   lineas = aboutme.presentacion;
-   json = aboutme.json;
-   llave1 = "{";
-   llave2 = "}";
-  constructor(private sidebarService: NbSidebarService,protected mailSender : MailsenderService,) {
-   
+  aboutme = aboutme;
+  lineas = aboutme.presentacion;
+  json = aboutme.json;
+  llave1 = '{';
+  llave2 = '}';
+  constructor(private sidebarService: NbSidebarService, protected mailSender: MailsenderService, ) {
+
   }
 
-  colapsar(){
+  colapsar() {
     this.sidebarService.collapse();
   }
   toggle() {
@@ -35,30 +35,22 @@ export class InicioComponent implements OnInit {
   }
 
 
-   
-
-
   ngOnInit() {
-  
+
     this.innerWidth = window.innerWidth;
-      console.log(this.innerWidth);
-      if (this.innerWidth<850){
-        this.colapsar();
-      }
-     
-      /* Mail Check */
-      let mensaje : mailmensaje;
-      mensaje = {
-        "mail": "Inicio",
-        "mensaje": "Connection works"
-      }
-     this.mailSender.sendMailPOST(mensaje,false);
-   
-     
-     
-
-
+    console.log(this.innerWidth);
+    if (this.innerWidth < 850) {
+      this.colapsar();
     }
+
+    /* Mail Check */
+    /*let mensaje: mailmensaje;
+    mensaje = {
+      mail : 'Inicio',
+      mensaje : 'Connection works'
+    };
+    this.mailSender.sendMailPOST(mensaje, false);*/
   }
-  
+}
+
 

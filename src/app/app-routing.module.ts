@@ -12,10 +12,14 @@ const routes: Routes = [
     path: 'cv',
     component: CvComponent,
     data: { title: 'Curriculum Vitae' }
-  },{
+  }/*,{
     path: 'Chat',
     component: ChatComponent,
     data: { title: 'Chat' }
+  },*/
+  ,{
+    path: 'Chat',
+    redirectTo: '/404'
   },
   { path: '',
     redirectTo: '/Inicio',

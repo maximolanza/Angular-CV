@@ -1,38 +1,11 @@
-<div id="contentfront" class="content">
-  <div class="card">
-    <div class="card__side card__side--front">
-      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
-      <div class="card__cont">
-        <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font>
-      </div>
-    </div>
-    <div class="card__side card__side--back">
-      <div class="card__cta">
-        <p *ngFor="let l of lineas">
-          <span class="green">{{l.linea}}</span>
-        </p>
-      </div>
-      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
-    </div>
+
+<div class="content">
+  <font size="16px" class="text404 slide-right scale-down-center"><span class="blue">alert</span><span>(<span
+        class="text404">'Hola!'</span>)</span></font>
+</div>
+
+<div>
+  <div *ngFor="let l of lineas">
+    <p> <span class="text404">{{l.linea}}</span></p>
   </div>
 </div>
-<!--
-<div id="contentback" class="content">
-  <div class="card">
-    <div class="card__side card__side--back">
-      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
-      <div class="card__cont">
-        <font size="4%"><span class="blue">alert</span><span>(<span class="green">'Hola!'</span>)</span></font>
-      </div>
-    </div>
-    <div class="card__side card__side--front">
-      <div class="card__cta">
-        <p *ngFor="let l of lineas">
-          <span class="green">{{l.linea}}</span>
-        </p>
-      </div>
-      <nb-icon class="flipicon" icon="flip-2-outline"></nb-icon>
-    </div>
-  </div>
-</div>
--->

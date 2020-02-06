@@ -18,7 +18,7 @@ export class Error404Component implements OnInit {
   let i2 = 0;
   let i3 = 0;  
   let txt = 'Ups, creo que algo salió mal.';
-  let txt2 = '¿Podrias chequear si esta correcta la dirección URL?';
+  let txt2 = '¿Podrías chequear si esta correcta la dirección URL?';
   let txt3 = 'Gracias!';
   let speed = 50;
 

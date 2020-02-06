@@ -11,12 +11,10 @@ import { ClickOutsideModule } from 'ng-click-outside';
 })
 export class NavbarComponent implements OnInit {
   public innerWidth: any;
-  collapsed : boolean; 
+  collapsed : boolean;
   avatar = aboutme.avatar;
   link = aboutme.gmailpdf;
 
- 
-  
   items = [
     {
       title: 'Inicio',
@@ -28,69 +26,64 @@ export class NavbarComponent implements OnInit {
       icon: 'file-outline',
       link: '/cv',
     },
-    {
+    /*{
       title: 'ChatBot',
       icon: { icon: 'message-square-outline', pack: 'eva' },
       link: '/Chat',
-    },
+    },*/
     {
       title: 'Contacto',
       icon: 'email-outline',
       link: '/Contacto',
     },
   ];
-  
+
   constructor(private sidebarService: NbSidebarService) {
-    this.collapsed= false;
+    this.collapsed = false;
   }
 
-  /*colapsar(){
-    this.sidebarService.collapse();
-  }*/
   toggle() {
     this.sidebarService.toggle(true);
-   
-    if (this.collapsed){
-      this.collapsed=false;
-    }else{
-      this.collapsed=true;
+
+    if (this.collapsed) {
+      this.collapsed = false;
+    } else {
+      this.collapsed = true;
     }
-   
+
     this.innerWidth = window.innerWidth;
-   // console.log(this.innerWidth);
-    
-    if (this.innerWidth<850){
-       if (this.collapsed){
-      this.collapsed=false;
-    }else{
-      this.collapsed=true;
+
+    if (this.innerWidth < 850) {
+       if (this.collapsed) {
+      this.collapsed = false;
+    } else {
+      this.collapsed = true;
     }
-    }else{
+    } else {
 
     }
-    
     return false;
   }
 
- 
+
   ngOnInit() {
 
     this.innerWidth = window.innerWidth;
-    //console.log(this.innerWidth);
-    if (this.innerWidth<1200){
-      this.collapsed=true;
+    // console.log(this.innerWidth);
+    if (this.innerWidth < 1200) {
+      this.collapsed = true;
     }
 }
-    
+
 onClickedOutside(e: Event) {
-  
-  //console.log('Clicked outside:', e);
-  console.log(e['screenY']);
-  if (!this.collapsed && !(e['screenX']>19 && e['screenX']<40 && e['screenY']>128 && e['screenY']<151) ){
+  // tslint:disable-next-line: no-string-literal
+  console.log( e[ 'screenY' ] );
+    // tslint:disable-next-line: no-string-literal
+  if (!this.collapsed && !( e['screenX'] > 19 && e['screenX'] < 40 && e['screenY'] > 128 && e['screenY'] < 151) ) {
     this.sidebarService.toggle(true);
-    this.collapsed=true;     
+    this.collapsed = true;
     }
-   
+
 }
 
 }

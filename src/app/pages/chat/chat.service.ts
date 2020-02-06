@@ -11,20 +11,20 @@ export class ChatService {
   server = RESTSERVER;
   api = EndPoints.api;
 
-  url = this.server+this.api;
+  url = this.server + this.api;
 
 
   constructor(private http: HttpClient) { }
 
-  getMessage(Message : String): Observable<any>{
+  getMessage(Message: string): Observable<any> {
 
-      const httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type':  'text'
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'text'
       })
-  };
-    console.log(this.url+Message);
-   return  this.http.get(this.url+Message.toString(),{responseType: 'text'});
+    };
+    console.log(this.url + Message);
+    return this.http.get(this.url + Message.toString(), { responseType: 'text' });
   }
-  
+
 }

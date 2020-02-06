@@ -10,25 +10,26 @@ import { Location } from '@angular/common';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  inputMail: String;
-  inputMensaje: String;
-  text: String = '';
-  alert: boolean = false;
+  inputMail: string;
+  inputMensaje: string;
+  text = '';
+  alert = false;
   dangerpos: NbGlobalPosition = NbGlobalLogicalPosition.BOTTOM_START;
-  private index: number = 0;
+  private index = 0;
   @HostBinding('class')
-  classes = 'example-items-rows';  
+  classes = 'example-items-rows';
   loading = false;
+  innerWidth: any;
 
   constructor(
-    protected mailSender: MailsenderService, 
-    private toastrService: NbToastrService, 
+    protected mailSender: MailsenderService,
+    private toastrService: NbToastrService,
     private sidebarService: NbSidebarService,
-    private location : Location) {
+    private location: Location) {
   }
 
 
- 
+
 
 
   toggleLoadingAnimation() {
@@ -36,21 +37,21 @@ export class ContactComponent implements OnInit {
     setTimeout(() => this.loading = false,3000);
   }
 
-  //Funcion utilizada por el Boton para enviar el mensaje
+  // Funcion utilizada por el Boton para enviar el mensaje
 
 
-  toastAlert(isContact: boolean, message: String, title: String, status: any, position: any): any {
-    
+  toastAlert(isContact: boolean, message: string, title: string, status: any, position: any): any {
+
     if (isContact) {
       setTimeout(() => {
-        if (status == 'success') {
+        if (status === 'success') {
           this.toastrService.success(message, title, { position });
           this.inputMail = '';
           this.inputMensaje = '';
         } else {
-         
+
           this.toastrService.danger(message, title, { position });
-          
+
         }
       }, 2000);
     }
@@ -59,37 +60,38 @@ export class ContactComponent implements OnInit {
   }
 
 
-  sendMailSpinner(){
-    this.toggleLoadingAnimation() ; //Here my spinner started but never stopped
+  sendMailSpinner() {
+    this.toggleLoadingAnimation() ; // Here my spinner started but never stopped
    // this.loading = false;
-    this.sendMail('bottom-left', 'success',4000);
+    this.sendMail('bottom-left', 'success', 4000);
   }
 
   sendMail(position, status, duration) {
-   /**/ 
-    //Si el texto del mensaje a enviar es valido
+   /**/
+    // Si el texto del mensaje a enviar es valido
     this.toggleLoadingAnimation();
     if (this.inputMensaje && this.inputMail) {
       let mensaje: mailmensaje;
-      //Creo el mensaje para enviar al Servicio
+      // Creo el mensaje para enviar al Servicio
       mensaje = {
-        "mail": this.inputMail,
-        "mensaje": this.inputMensaje
+        mail: this.inputMail,
+        mensaje: this.inputMensaje
       }
 
-      //Envio el mensaje con el servicio
+      // Envio el mensaje con el servicio
+      const errorMessage =  'Algo falló, ¿Podrías intentar otra vez?';
       this.mailSender.sendMailPOST(mensaje, true)
         .subscribe(
           data => this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right'),         // process data
-          (err: string) => this.toastAlert(true, 'Algo falló, ¿Podrías intentar otra vez?', 'Error', 'danger', 'bottom-right') // process error
+          (err: string) => this.toastAlert(true, errorMessage, 'Error', 'danger', 'bottom-right') // process error
         )
 
       this.alert = true;
       this.index += 1;
-     
+
 
     } else {
-      //console.log("ELSE inputs vacios");
+      // console.log("ELSE inputs vacios");
       this.showToastDanger('danger', position);
     }
   }
@@ -107,7 +109,7 @@ export class ContactComponent implements OnInit {
   toggle() {
     this.sidebarService.toggle(true);
   }
-  public innerWidth: any;
+
   ngOnInit() {
 
 

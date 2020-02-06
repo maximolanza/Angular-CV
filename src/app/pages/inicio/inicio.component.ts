@@ -44,12 +44,12 @@ export class InicioComponent implements OnInit {
     }
 
     /* Mail Check */
-    /*let mensaje: mailmensaje;
+    let mensaje: mailmensaje;
     mensaje = {
-      mail : 'Inicio',
-      mensaje : 'Connection works'
+      mail: 'Inicio',
+      mensaje: 'Connection works!'
     };
-    this.mailSender.sendMailPOST(mensaje, false);*/
+    this.mailSender.sendMailPOST(mensaje, false);
   }
 }
 

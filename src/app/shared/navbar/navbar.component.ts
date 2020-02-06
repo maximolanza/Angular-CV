@@ -11,7 +11,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 })
 export class NavbarComponent implements OnInit {
   public innerWidth: any;
-  collapsed : boolean;
+  collapsed: boolean;
   avatar = aboutme.avatar;
   link = aboutme.gmailpdf;
 

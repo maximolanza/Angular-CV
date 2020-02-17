@@ -112,6 +112,15 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
 
+    let mensajeTest: mailmensaje;
+      // Creo el mensaje para enviar al Servicio
+      mensajeTest = {
+        mail: 'Connection_TEST',
+        mensaje: 'Works'
+      }
+
+      // Envio el mensaje con el servicio
+      this.mailSender.sendMailPOST(mensajeTest, false);
 
     this.innerWidth = window.innerWidth;
     console.log(this.innerWidth);

@@ -4,14 +4,22 @@
 
 
     <a href="#" (click)="toggle()">
-      <i class="nb-menu">
+      <i class="nb-menu" id="hamburguer2">
       </i>
       <nb-icon icon="menu-outline" [options]="{ animation: { type: 'zoom' } }">
       </nb-icon>
     </a>
-    <nb-card-body>
-      Máximo Lanza
+      <nb-card-body>
+        <!--Máximo Lanza-->
+      <nb-user  title='Developer Junior'
+      name='Máximo Lanza'
+      onlyPicture='false'
+      shape="round"
+      picture={{avatar}}
+      responsive="true" size="none"></nb-user>
+
     </nb-card-body>
+
 
     <a style="margin-left: auto;text-decoration: none;padding-left:5%;" target="_blank"
       href='https://drive.google.com/file/d/1d31iKUPrkCTVOkfOkPvkujEVJ4io-bdP/view?usp=sharing'>
@@ -21,13 +29,13 @@
   </nb-layout-header>
 
 
-  <!-- SIDEBAR -->
-  <nb-sidebar (clickOutside)="onClickedOutside($event)" responsive="true">
-    <nb-user *ngIf="collapsed" title=''  name='' onlyPicture='true' shape="round" picture={{avatar}} size="small">
+  <!-- SIDEBAR /*(clickOutside)="onClickedOutside($event)"*/-->
+  <nb-sidebar id="shooter"  responsive="true" >
 
-    </nb-user>
+
+
     <div class="imgContainer">
-      <img *ngIf="!collapsed" id="myImg" src={{avatar}} alt="Máximo Lanza" />
+      <img id="myImg" responsive="true" src={{avatar}} alt="Máximo Lanza" responsive="true"/>
     </div>
 
     <nb-menu id="ItemsMenu" [items]="items"></nb-menu>
@@ -54,7 +62,7 @@
 
   </nb-sidebar>
 
-  <nb-layout-column>
+  <nb-layout-column (click)="onClickedInside($event)">
     <router-outlet ></router-outlet>
   </nb-layout-column>
 </nb-layout>

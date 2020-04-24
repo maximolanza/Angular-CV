@@ -25,8 +25,8 @@ export const aboutme = {
   { linea : 'Soy Jr Developer'},
   { linea : 'Estudiante en el último año de la carrera de Tecnólogo en Informatica.'},
   { linea : 'Gran apasionado por el desarrollo de software y el constante aprendizaje.'},
-  { linea : 'Si buscas una persona con mucha motivación'},
-  { linea : '¡No dudes en contactarme!'},
+  { linea : 'Estaré dispuesto a cualquier consulta!'},
+  { linea : '¡Saludos!'},
 ],
 
    'json' : [

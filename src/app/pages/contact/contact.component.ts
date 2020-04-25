@@ -88,7 +88,9 @@ export class ContactComponent implements OnInit {
       const errorMessage =  'Algo falló, ¿Podrías intentar otra vez?';
       this.mailSender.sendMailPOST(mensaje, true)
         .subscribe(
-          data => this.showToastAfterMail(data.error)/*this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right')*/,         // process data
+         data => console.log(data["error"])
+
+          /*this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right')*/,         // process data
           (err: string) => this.toastAlert(true, errorMessage, 'Error', 'danger', 'bottom-right') // process error
         )
 

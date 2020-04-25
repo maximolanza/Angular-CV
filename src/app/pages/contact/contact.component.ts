@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
   private index = 0;
   @HostBinding('class')
   classes = 'example-items-rows';
-  loading = false;
+  loading: boolean = false;
   innerWidth: any;
 
   constructor(
@@ -32,10 +32,10 @@ export class ContactComponent implements OnInit {
 
 
 
-  toggleLoadingAnimation() {
-    this.loading = true;
-    setTimeout(() => this.loading = false,3000);
-  }
+ // toggleLoadingAnimation() {
+   // this.loading = !  this.loading;
+    //setTimeout(() => this.loading = false, 3000);
+  //}
 
   // Funcion utilizada por el Boton para enviar el mensaje
 
@@ -53,6 +53,8 @@ export class ContactComponent implements OnInit {
           this.toastrService.danger(message, title, { position });
 
         }
+        document.getElementById("inputMessage").focus();
+
       }, 2000);
     }
 
@@ -61,15 +63,19 @@ export class ContactComponent implements OnInit {
 
 
   sendMailSpinner() {
-    this.toggleLoadingAnimation() ; // Here my spinner started but never stopped
+    this.loading = true;
+
+   // this.toggleLoadingAnimation() ; // Here my spinner started but never stopped
    // this.loading = false;
     this.sendMail('bottom-left', 'success', 4000);
+    setTimeout(() => this.loading = false, 3000);
+    //this.loading=false;
   }
 
   sendMail(position, status, duration) {
    /**/
     // Si el texto del mensaje a enviar es valido
-    this.toggleLoadingAnimation();
+   // this.loading=false;
     if (this.inputMensaje && this.inputMail) {
       let mensaje: mailmensaje;
       // Creo el mensaje para enviar al Servicio
@@ -82,7 +88,7 @@ export class ContactComponent implements OnInit {
       const errorMessage =  'Algo falló, ¿Podrías intentar otra vez?';
       this.mailSender.sendMailPOST(mensaje, true)
         .subscribe(
-          data => this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right'),         // process data
+          data => this.showToastAfterMail(data.error)/*this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right')*/,         // process data
           (err: string) => this.toastAlert(true, errorMessage, 'Error', 'danger', 'bottom-right') // process error
         )
 
@@ -93,6 +99,17 @@ export class ContactComponent implements OnInit {
     } else {
       // console.log("ELSE inputs vacios");
       this.showToastDanger('danger', position);
+    }
+  }
+
+  showToastAfterMail(error: boolean){
+    const errorMessage =  'Algo falló, ¿Podrías intentar otra vez?';
+    if (!error) {
+      this.toastAlert(true, 'Mensaje enviado!!!', 'Ok', 'success', 'bottom-right')
+      //this.toggleLoadingAnimation() ;
+      //this.loading = true;
+    } else {
+      this.toastAlert(true, errorMessage, 'Error', 'danger', 'bottom-right')
     }
   }
 

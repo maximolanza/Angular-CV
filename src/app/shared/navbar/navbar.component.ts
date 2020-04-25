@@ -29,12 +29,12 @@ export class NavbarComponent implements OnInit {
       title: 'ChatBot',
       icon: { icon: 'message-square-outline', pack: 'eva' },
       link: '/Chat',
-    },*/
+    },
     {
       title: 'Contacto',
       icon: 'email-outline',
       link: '/Contacto',
-    },
+    },*/
   ];
 
   constructor(private sidebarService: NbSidebarService) {

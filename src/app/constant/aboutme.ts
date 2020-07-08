@@ -22,10 +22,10 @@ export const aboutme = {
    {'linea' :' Me encuentro en búsqueda de oportunidades laborales en empresas de desarrollo de software en las cuales poder poner en práctica mis conocimientos sobre el rubro tecnológico.'},
     */
   { linea : ''},
-  { linea : 'Soy Jr Developer'},
+  { linea : 'Soy Semi-Senior Developer'},
   { linea : 'Estudiante en el último año de la carrera de Tecnólogo en Informatica.'},
   { linea : 'Gran apasionado por el desarrollo de software y el constante aprendizaje.'},
-  { linea : 'Estaré dispuesto a cualquier consulta!'},
+  { linea : 'Estaré dispuesto a responderte cualquier consulta!'},
   { linea : '¡Saludos!'},
 ],
 

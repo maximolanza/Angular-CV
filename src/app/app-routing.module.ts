@@ -24,6 +24,10 @@ const routes: Routes = [
   { path: '',
     redirectTo: '/Inicio',
     pathMatch: 'full'
+  },
+  { path: '*',
+    redirectTo: '/Inicio',
+    pathMatch: 'full'
   },{
     path: 'Contacto',
     component: ContactComponent,
